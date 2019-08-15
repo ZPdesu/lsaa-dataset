@@ -33,9 +33,9 @@ def project_panoramas(opt, projection_list, start_point, end_point, core):
         tmp_xy = tmp_xy1.copy()
 
         if projection_name in rectification_results:
-            panorama_img_name = os.path.join(opt.pano_folder, os.path.join('images', rectification_results[projection_name]['panoID'] + '.jpg'))
+            panorama_img_name = os.path.join(opt.pano_folder, rectification_results[projection_name]['panoID'] + '.jpg')
 
-            projection_img_path = os.path.join(Projection_img_folder, projection_name)
+            projection_img_path = os.path.join(Projection_folder, projection_name)
             if os.path.exists(panorama_img_name):
                 if not os.path.exists(projection_img_path):
                     super_R = R_pitch(rectification_results[projection_name]['pitch']).dot(
@@ -82,11 +82,11 @@ if __name__=='__main__':
     if not os.path.exists(Projection_folder):
         os.makedirs(Projection_folder)
 
-    Projection_img_folder = os.path.join(Projection_folder, 'images')
-    if not os.path.exists(Projection_img_folder):
-        os.makedirs(Projection_img_folder)
+    # Projection_img_folder = Projection_folder
+    # if not os.path.exists(Projection_img_folder):
+    #     os.makedirs(Projection_img_folder)
 
-    Projection_log_folder = os.path.join(Projection_folder, 'logs')
+    Projection_log_folder = os.path.join('logs', 'Projection')
     if not os.path.exists(Projection_log_folder):
         os.makedirs(Projection_log_folder)
 

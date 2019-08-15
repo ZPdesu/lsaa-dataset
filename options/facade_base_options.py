@@ -26,7 +26,7 @@ class FacadeBaseOptions():
         parser.add_argument("--country", type=str, default=None,
                             help="country constrain")
 
-        parser.add_argument("--city", type=str, default='Bern',
+        parser.add_argument("--city", type=str, default='Vienna',
                             help="city constrain")
 
         parser.add_argument("--min_height", type=int, default=None,
@@ -47,7 +47,7 @@ class FacadeBaseOptions():
 
 
         parser.add_argument("--first", type=int, default=0, help="first facade number")
-        parser.add_argument("--last", type=int, default=200, help="last facade number")
+        parser.add_argument("--last", type=int, default=50, help="last facade number")
 
         parser.add_argument("--use_tqdm", type=bool, default=True, help="use tqdm")
 

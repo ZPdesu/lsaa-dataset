@@ -30,7 +30,7 @@ class AssetBaseOptions():
         parser.add_argument("--country", type=str, default=None,
                             help="country constrain")
 
-        parser.add_argument("--city", type=str, default=None,
+        parser.add_argument("--city", type=str, default='Vienna',
                             help="city constrain")
 
         parser.add_argument("--min_height", type=int, default=None,

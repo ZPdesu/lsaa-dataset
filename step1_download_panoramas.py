@@ -69,15 +69,17 @@ if __name__=='__main__':
     Pano_folder = opt.pano_folder
     if not os.path.exists(Pano_folder):
         os.makedirs(Pano_folder)
-    Pano_node_folder = os.path.join(Pano_folder, 'nodes')
+
+    Pano_node_folder = os.path.join('nodes', 'Panoramas')
     if not os.path.exists(Pano_node_folder):
         os.makedirs(Pano_node_folder)
 
-    Pano_img_folder = os.path.join(Pano_folder, 'images')
-    if not os.path.exists(Pano_img_folder):
-        os.makedirs(Pano_img_folder)
 
-    Pano_log_folder = os.path.join(Pano_folder, 'logs')
+    Pano_img_folder = Pano_folder
+    # if not os.path.exists(Pano_img_folder):
+    #     os.makedirs(Pano_img_folder)
+
+    Pano_log_folder = os.path.join('logs', 'Panoramas')
     if not os.path.exists(Pano_log_folder):
         os.makedirs(Pano_log_folder)
 

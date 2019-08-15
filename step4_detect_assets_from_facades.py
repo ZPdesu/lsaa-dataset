@@ -35,11 +35,11 @@ def detect_assets(opt, asset_list, start_point, end_point, core):
 
         facade_name = asset_detection_result[asset_name]['facade_name']
 
-        facade_name_path = os.path.join(opt.facade_folder, os.path.join('images', facade_name))
+        facade_name_path = os.path.join(opt.facade_folder, facade_name)
 
         if os.path.exists(facade_name_path):
 
-            asset_img_path = os.path.join(Asset_img_folder, asset_name)
+            asset_img_path = os.path.join(Asset_folder, asset_name)
 
             if not os.path.exists(asset_img_path):
 
@@ -75,11 +75,11 @@ if __name__=='__main__':
     if not os.path.exists(Asset_folder):
         os.makedirs(Asset_folder)
 
-    Asset_img_folder = os.path.join(Asset_folder, 'images')
-    if not os.path.exists(Asset_img_folder):
-        os.makedirs(Asset_img_folder)
+    # Asset_img_folder = Asset_folder
+    # if not os.path.exists(Asset_img_folder):
+    #     os.makedirs(Asset_img_folder)
 
-    Asset_log_folder = os.path.join(Asset_folder, 'logs')
+    Asset_log_folder = os.path.join('logs', os.path.basename(opt.asset_folder))
     if not os.path.exists(Asset_log_folder):
         os.makedirs(Asset_log_folder)
 

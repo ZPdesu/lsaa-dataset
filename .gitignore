@@ -1,6 +1,8 @@
 annotations/
 data/
+logs/
 hh/
+nodes/
 old/
 .idea/
 project_windows.py

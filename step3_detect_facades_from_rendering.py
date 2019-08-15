@@ -31,10 +31,10 @@ def detect_facades(opt, facade_list, start_point, end_point, core):
         #projection_name = facade_detection_results[facade_name]['simplified_name']
         projection_name = facade_detection_results[facade_name]['complete_name']
 
-        projection_name_path = os.path.join(opt.projection_folder, os.path.join('images', projection_name))
+        projection_name_path = os.path.join(opt.projection_folder, projection_name)
 
         if os.path.exists(projection_name_path):
-            facade_img_path = os.path.join(Facade_img_folder, facade_name)
+            facade_img_path = os.path.join(Facades_folder, facade_name)
             if not os.path.exists(facade_img_path):
                 bbox = facade_detection_results[facade_name]['box']
                 im = skimage.io.imread(projection_name_path)
@@ -65,11 +65,11 @@ if __name__=='__main__':
     if not os.path.exists(Facades_folder):
         os.makedirs(Facades_folder)
 
-    Facade_img_folder = os.path.join(Facades_folder, 'images')
-    if not os.path.exists(Facade_img_folder):
-        os.makedirs(Facade_img_folder)
+    # Facade_img_folder = Facades_folder
+    # if not os.path.exists(Facade_img_folder):
+    #     os.makedirs(Facade_img_folder)
 
-    Facade_log_folder = os.path.join(Facades_folder, 'logs')
+    Facade_log_folder = os.path.join('logs', 'Facades')
     if not os.path.exists(Facade_log_folder):
         os.makedirs(Facade_log_folder)
 
