@@ -214,7 +214,7 @@ Depending on the asset types selected, you can get different kind of architectur
 ```
 > python step4_detect_assets_from_facades.py --asset_type window
 ```
-There are also two versions of the assets properties file: *xx_all.csv* and *xx_filtered.csv*. By default we use *xx_filtered.csv*. If you want to use *xx_all.csv*, please add `--filtered False` option. Both of assets in *xx_all.csv* and *xx_filtered.csv* are obtained from the facades in *Properties23K.csv*.
+There are also two versions of the assets properties file: *xx_all.csv* and *xx_filtered.csv*. By default we use *xx_filtered.csv*, so if you want to use *xx_all.csv*, please add `--filtered False` option. Both of assets in *xx_all.csv* and *xx_filtered.csv* are obtained from the facades in *Properties23K.csv*.
 
 
 ## Metadata
