@@ -60,14 +60,18 @@ Clone this repo.
 ```
 git clone git@github.com:ZPdesu/lsaa-dataset.git
 cd lsaa-dataset
-
 ```
 Please install dependencies by 
 
 ```
 pip install -r requirements.txt
+```
+This code also requires the [google-panorama-by-id](https://www.npmjs.com/package/google-panorama-by-id) to check whether the panorama has been removed by Google. You can easily install it by 
 
 ```
+npm install google-panorama-by-id
+```
+Then put the previously downloaded [annotations](https://drive.google.com/open?id=1hnMSMuA4fY28rqkI64asGmhUWKg_OMc5) folder in the current directory.
 
 ## Download script
 
