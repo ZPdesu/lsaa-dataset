@@ -23,20 +23,12 @@ The dataset (including JSON, CSV metadata, download script, and documents) is ma
 * [https://creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Overview
-![Teaser](./teaser.pdf)
-<embed src="./teaser.pdf" width="697" height="131">
-
-<object data="./teaser.pdf" type="application/pdf" width="697px" height="131px">
-    <embed src="http://yoursite.com/the.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
-
+![Teaser](./teaser.png)
 
 This dataset contains 199,723 facade images and corresponding window, door, and balcony asset images together with descriptive attributes. You can also get the original panoramic images (b) and projected images (c) after running the download scripts.
 
 Geographic locations of the collected facades:
-![locations](./locations.pdf)
+![locations](./locations.png)
 
 To get all of the data, you first need to download the annotations folder from [Google Drive](https://drive.google.com/open?id=1hnMSMuA4fY28rqkI64asGmhUWKg_OMc5) and place it under the main lsaa-dataset folder.
 
