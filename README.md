@@ -32,8 +32,18 @@ Annotation files are hosted on Google Drive:
 | &boxvr;&nbsp; [Properties23K.csv](https://drive.google.com/open?id=1ghPJjIHrao77-T8tvTlVn9cp9cKhZeLf) | 9.2 MB | 1 | CSV | 
 | &boxvr;&nbsp; [panorama_rectification.json](https://drive.google.com/open?id=12cOD19PeknR8uD7ePpJ74fOkVszQnj0G) | 138.6 MB | 1 | JSON | 
 | &boxvr;&nbsp; [facade_detection_result.json](https://drive.google.com/open?id=195uDy_l3dWbX8kVepHkcnpfKbq4ChiGF) | 85.2 MB | 1 | JSON | 
-| &boxvr;&nbsp; [window]() | 419.1MB | 3 | | 
-| &boxVr;&nbsp; [windows_all.csv]() | 419.1MB | 3 | | 
-| &boxVr;&nbsp; [zips]() | 1.28 MB | 4 | ZIP | 
+| &boxvr;&nbsp; [window](https://drive.google.com/open?id=1AAp8TrHhAHvjHC6_XXQtiMNtmE9rVyoa) | 419.1MB | 3 | | 
+| &boxv;&nbsp; &boxvr;&nbsp; [window_all.csv](https://drive.google.com/open?id=1ZzU1K6J-V4fA1lFJQZvHxs1pAgeGvDzJ) | 147.0MB | 1 | CSV | 
+| &boxv;&nbsp; &boxvr;&nbsp; [window_filtered.csv](https://drive.google.com/open?id=1B9VRjIjmjwinWSCtdasHkN5cIg5dr4Dd) | 44.4 MB | 1 | CSV | 
+| &boxv;&nbsp; &boxur;&nbsp; [window_detection.json](https://drive.google.com/open?id=17BVv-83BZrKj6rMe8FJyzTBiI58sE35e) | 227.7 MB | 1 | JSON | 
+| &boxvr;&nbsp; [door](https://drive.google.com/open?id=1Rojo5dhgLejOhznrHijUcnMcFqKofEeK) | 23.1MB | 3 | | 
+| &boxv;&nbsp; &boxvr;&nbsp; [door_all.csv](https://drive.google.com/open?id=1pVBiEmKPDelo_ThiSMTeWgqOwUzcIyRL) | 8.0MB | 1 | CSV | 
+| &boxv;&nbsp; &boxvr;&nbsp; [door_filtered.csv](https://drive.google.com/open?id=102pCJ9VczUHMfOGPXOhbMnql6KJ19paL) | 5.0 MB | 1 | CSV | 
+| &boxv;&nbsp; &boxur;&nbsp; [door_detection.json](https://drive.google.com/open?id=1S48sCwfWYHX6-XkhMAvtkdRrNXJMA_xc) | 10.2 MB | 1 | JSON | 
+| &boxur;&nbsp; [balcony](https://drive.google.com/open?id=13qt-1BPgDp7WBJFs9YCDWHTcZGtX2mXL) | 107.8MB | 3 | | 
+| &ensp;&ensp; &boxvr;&nbsp; [balcony_all.csv](https://drive.google.com/open?id=1TqoKAbbriRoKrdm2I6ODk5MUfcmMtFw9)| 40.7MB | 1 | CSV | 
+| &ensp;&ensp; &boxvr;&nbsp; [balcony_filtered.csv](https://drive.google.com/open?id=1aTpfpy7Nii3x8il4ieiBzZrI2fjgYkav)| 15.2MB | 1 | CSV | 
+| &ensp;&ensp; &boxur;&nbsp; [balcony_detection.json](https://drive.google.com/open?id=1ymygF05ZbiJ4faMJQqDODZDefFVX-HjI) | 51.9 MB | 1 | JSON | 
+
 
 
