@@ -77,11 +77,95 @@ Then put the previously downloaded [annotations](https://drive.google.com/open?i
 
 To download the data, you can easily use the provided download scripts. Please use these 4 scripts according to the order from step1 to step4, and make sure that the optional arguments for step1 to step3 are the same.
 
-Step1:
+**Step1**: Download the panoramic images.
 
 ```
-> python step1_download_panoramas.py -h 
-usage
+> python step1_download_panoramas.py -h
+usage: step1_download_panoramas.py [-h] [--properties_file FILE] [--cores NUM]
+                                   [--pano_folder FOLDER]
+                                   [--projection_folder FOLDER]
+                                   [--facade_folder FOLDER]
+                                   [--facade_detection_result FILE]
+                                   [--panorama_rectification FILE]
+                                   [--country COUNTRY] [--city CITY]
+                                   [--min_height PX] [--min_width PX]
+                                   [--max_height PX] [--max_width PX]
+                                   [--max_occlusion NUM] [--first NUM]
+                                   [--last NUM] [--use_tqdm BOOL]
+​
+```
+**Step2**: Rectify and project the panoramic images.
+
+```
+> python step2_rectify_and_project_panoramas.py -h
+usage: step1_download_panoramas.py [-h] [--properties_file FILE] [--cores NUM]
+                                   [--pano_folder FOLDER]
+                                   [--projection_folder FOLDER]
+                                   [--facade_folder FOLDER]
+                                   [--facade_detection_result FILE]
+                                   [--panorama_rectification FILE]
+                                   [--country COUNTRY] [--city CITY]
+                                   [--min_height PX] [--min_width PX]
+                                   [--max_height PX] [--max_width PX]
+                                   [--max_occlusion NUM] [--first NUM]
+                                   [--last NUM] [--use_tqdm BOOL]
+​
+```
+**Step3**: Detect facades from projected images.
+
+```
+> python step3_detect_facades_from_rendering.py -h
+usage: step1_download_panoramas.py [-h] [--properties_file FILE] [--cores NUM]
+                                   [--pano_folder FOLDER]
+                                   [--projection_folder FOLDER]
+                                   [--facade_folder FOLDER]
+                                   [--facade_detection_result FILE]
+                                   [--panorama_rectification FILE]
+                                   [--country COUNTRY] [--city CITY]
+                                   [--min_height PX] [--min_width PX]
+                                   [--max_height PX] [--max_width PX]
+                                   [--max_occlusion NUM] [--first NUM]
+                                   [--last NUM] [--use_tqdm BOOL]
+​
+```
+
+Optional arguments for step1,2,3:
+
+```
+  -h, --help            show this help message and exit
+  --properties_file FILE
+                        facade_properties file (default:
+                        annotations/Properties23K.csv)
+  --cores NUM           use multiple cores to download panoramas (default: 48)
+  --pano_folder FOLDER  panorama folder (default: data/Panoramas)
+  --projection_folder FOLDER
+                        projection folder (default: data/Projection)
+  --facade_folder FOLDER
+                        facade folder (default: data/Facades)
+  --facade_detection_result FILE
+                        facade bounding boxes on projected images (default:
+                        annotations/facade_detection_result.json)
+  --panorama_rectification FILE
+                        rectification parameters of the panoramic images
+                        (default: annotations/panorama_rectification.json)
+  --country COUNTRY     country constrain (default: None)
+  --city CITY           city constrain (default: Vienna)
+  --min_height PX       facade minimal height (default: None)
+  --min_width PX        facade minimal width (default: None)
+  --max_height PX       facade maximal height (default: None)
+  --max_width PX        facade maximal width (default: None)
+  --max_occlusion NUM   facade max occlusion (default: 0.6)
+  --first NUM           first facade number (default: 0)
+  --last NUM            last facade number (default: 50)
+  --use_tqdm BOOL       use tqdm (default: True)
+```
+
+Here is an example to download 300 facade images of Vienna with a minimum pixel size greater than $200\times200$.
+
+```
+> python step1_download_panoramas.py --city Vienna --min_height 200 --min_width 200 --first 0 --last 300
+> python step2_rectify_and_project_panoramas.py --city Vienna --min_height 200 --min_width 200 --first 0 --last 300
+> python step3_detect_facades_from_rendering.py --city Vienna --min_height 200 --min_width 200 --first 0 --last 300
 ```
 
 ## Metadata
@@ -91,7 +175,7 @@ usage
 If you use this code or data for your research, please cite our papers.
 
 ```
- 
+
 ```
 
 ## Acknowledgements
