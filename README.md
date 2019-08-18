@@ -75,9 +75,24 @@ Then put the previously downloaded [annotations](https://drive.google.com/open?i
 
 ## Download script
 
+To download the data, you can easily use the provided download scripts. Please use these 4 scripts according to the order from step1 to step4, and make sure that the optional arguments for step1 to step3 are the same.
+
+Step1:
+
+```
+> python step1_download_panoramas.py -h 
+usage
+```
+
 ## Metadata
 
 ## Citation
+
+If you use this code or data for your research, please cite our papers.
+
+```
+ 
+```
 
 ## Acknowledgements
 
