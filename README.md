@@ -160,13 +160,62 @@ Optional arguments for step1,2,3:
   --use_tqdm BOOL       use tqdm (default: True)
 ```
 
-Here is an example to download 300 facade images of Vienna with a minimum pixel size greater than $200\times200$.
+Here is an example to download 300 facade images of Vienna with a minimum pixel size greater than 200&times;200.
 
 ```
 > python step1_download_panoramas.py --city Vienna --min_height 200 --min_width 200 --first 0 --last 300
 > python step2_rectify_and_project_panoramas.py --city Vienna --min_height 200 --min_width 200 --first 0 --last 300
 > python step3_detect_facades_from_rendering.py --city Vienna --min_height 200 --min_width 200 --first 0 --last 300
 ```
+
+It is worth noting that three files need the same optional arguments. If you want to change the default values, please modify the *options/facade_base_options.py*.
+
+By default, we use the *annotations/Properties23K.csv* as facade_properties file, which means we only download the filtered 23K facade images other than the original 200K. Due to image quality issues, we removed facade images of Berlin, Brussels and HK in the *annotations/Properties23K.csv*, so please do not choose these values as the city option when you are using the annotations/Properties23K.csv.
+
+**Step4**: Detect architectural assets (windows, doors and balconies) from downloaded facade images.
+
+```
+> python step4_detect_assets_from_facades.py -h
+usage: step4_detect_assets_from_facades.py [-h] [--asset_type TYPE]
+                                           [--filtered BOOL] [--cores CORES]
+                                           [--pano_folder FOLDER]
+                                           [--projection_folder FOLDER]
+                                           [--facade_folder FOLDER]
+                                           [--country COUNTRY] [--city CITY]
+                                           [--min_height PX] [--min_width PX]
+                                           [--max_height PX] [--max_width PX]
+                                           [--max_occlusion NUM]
+                                           [--use_tqdm BOOL]
+​
+optional arguments:
+  -h, --help            show this help message and exit
+  --asset_type TYPE     asset type (default: window)
+  --filtered BOOL       if filtered use asset_filtered.csv, otherwise use
+                        asset_all.csv (default: True)
+  --cores CORES         use multiple cores to download panoramas (default: 48)
+  --pano_folder FOLDER  pano folder (default: data/Panoramas)
+  --projection_folder FOLDER
+                        projection folder (default: data/Projection)
+  --facade_folder FOLDER
+                        facade folder (default: data/Facades)
+  --country COUNTRY     country constrain (default: None)
+  --city CITY           city constrain (default: None)
+  --min_height PX       asset minimal height (default: None)
+  --min_width PX        asset minimal width (default: None)
+  --max_height PX       asset maximal height (default: None)
+  --max_width PX        asset maximal width (default: None)
+  --max_occlusion NUM   max occlusion (default: None)
+  --use_tqdm BOOL       use tqdm (default: True)
+​
+```
+
+Depending on the asset types selected, you can get different kind of architectural assets from previously downloaded facade images, e.g. windows or doors. Here is a simple example to get the window images:
+
+```
+> python step4_detect_assets_from_facades.py --asset_type window
+```
+There are also two versions of the assets properties file: *xx_all.csv* and *xx_filtered.csv*. By default we use *xx_filtered.csv*. If you want to use *xx_all.csv*, please add `--filtered False` option. Both of assets in *xx_all.csv* and *xx_filtered.csv* are obtained from the facades in *Properties23K.csv*.
+
 
 ## Metadata
 

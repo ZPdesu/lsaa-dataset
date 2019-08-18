@@ -30,20 +30,20 @@ class AssetBaseOptions():
         parser.add_argument("--country", type=str, default=None,
                             help="country constrain")
 
-        parser.add_argument("--city", type=str, default='Vienna',
+        parser.add_argument("--city", type=str, default=None,
                             help="city constrain")
 
         parser.add_argument("--min_height", type=int, default=None,
-                            help="minimal height", metavar='PX')
+                            help="asset minimal height", metavar='PX')
 
         parser.add_argument("--min_width", type=int, default=None,
-                            help="minimal width", metavar='PX')
+                            help="asset minimal width", metavar='PX')
 
         parser.add_argument("--max_height", type=int, default=None,
-                            help="maximal height", metavar='PX')
+                            help="asset maximal height", metavar='PX')
 
         parser.add_argument("--max_width", type=int, default=None,
-                            help="maximal width", metavar='PX')
+                            help="asset maximal width", metavar='PX')
 
         parser.add_argument("--max_occlusion", type=float, default=None,
                             help="max occlusion", metavar='NUM')
