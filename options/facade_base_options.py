@@ -8,20 +8,21 @@ class FacadeBaseOptions():
         self.initialized = False
 
     def initialize(self, parser):
-        parser.add_argument("--properties_file", type=str, default='annotations/Properties23K.csv', help="properties file")
-        parser.add_argument("--cores", type=int, default=max(multiprocessing.cpu_count() - 2, 1),
-                       help="use multiple cores to download panoramas")
-        parser.add_argument("--pano_folder", type=str, default='data/Panoramas', help="pano folder")
+        parser.add_argument("--properties_file", type=str, default='annotations/Properties23K.csv',
+                            help="facade_properties file", metavar='FILE')
+        parser.add_argument("--cores", type=int, default=multiprocessing.cpu_count(),
+                       help="use multiple cores to download panoramas", metavar='NUM')
+        parser.add_argument("--pano_folder", type=str, default='data/Panoramas', help="panorama folder", metavar='FOLDER')
 
-        parser.add_argument("--projection_folder", type=str, default='data/Projection', help="projection folder")
+        parser.add_argument("--projection_folder", type=str, default='data/Projection', help="projection folder", metavar='FOLDER')
 
-        parser.add_argument("--facade_folder", type=str, default='data/Facades', help="facade folder")
+        parser.add_argument("--facade_folder", type=str, default='data/Facades', help="facade folder", metavar='FOLDER')
 
         parser.add_argument("--facade_detection_result", type=str, default='annotations/facade_detection_result.json',
-                            help="facade_detection_result")
+                            help="facade bounding boxes on projected images", metavar='FILE')
 
         parser.add_argument("--panorama_rectification", type=str, default='annotations/panorama_rectification.json',
-                            help="panorama_rectification")
+                            help="rectification parameters of the panoramic images", metavar='FILE')
 
         parser.add_argument("--country", type=str, default=None,
                             help="country constrain")
@@ -30,26 +31,26 @@ class FacadeBaseOptions():
                             help="city constrain")
 
         parser.add_argument("--min_height", type=int, default=None,
-                            help="minimal height")
+                            help="facade minimal height", metavar='PX')
 
         parser.add_argument("--min_width", type=int, default=None,
-                            help="minimal width")
+                            help="facade minimal width", metavar='PX')
 
         parser.add_argument("--max_height", type=int, default=None,
-                            help="maximal height")
+                            help="facade maximal height", metavar='PX')
 
         parser.add_argument("--max_width", type=int, default=None,
-                            help="maximal width")
+                            help="facade maximal width", metavar='PX')
 
-        parser.add_argument("--max_occlusion", type=float, default=0.5,
-                            help="max occlusion")
+        parser.add_argument("--max_occlusion", type=float, default=0.6,
+                            help="facade max occlusion", metavar='NUM')
 
 
 
-        parser.add_argument("--first", type=int, default=0, help="first facade number")
-        parser.add_argument("--last", type=int, default=50, help="last facade number")
+        parser.add_argument("--first", type=int, default=0, help="first facade number", metavar='NUM')
+        parser.add_argument("--last", type=int, default=50, help="last facade number", metavar='NUM')
 
-        parser.add_argument("--use_tqdm", type=bool, default=True, help="use tqdm")
+        parser.add_argument("--use_tqdm", type=bool, default=True, help="use tqdm", metavar='BOOL')
 
         self.initialized = True
         return parser

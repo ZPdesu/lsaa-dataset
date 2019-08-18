@@ -13,19 +13,19 @@ class AssetBaseOptions():
 
 
         parser.add_argument("--asset_type", type=str, default='window',choices=['window', 'balcony', 'door'],
-                            help="asset type")
+                            help="asset type", metavar='TYPE')
 
         parser.add_argument("--filtered", type=bool, default=True,
-                            help="if filtered use asset_filtered.csv, otherwise use asset_all.csv")
+                            help="if filtered use asset_filtered.csv, otherwise use asset_all.csv",  metavar='BOOL')
 
 
-        parser.add_argument("--cores", type=int, default=max(multiprocessing.cpu_count() - 2, 1),
+        parser.add_argument("--cores", type=int, default=multiprocessing.cpu_count(),
                        help="use multiple cores to download panoramas")
-        parser.add_argument("--pano_folder", type=str, default='data/Panoramas', help="pano folder")
+        parser.add_argument("--pano_folder", type=str, default='data/Panoramas', help="pano folder", metavar='FOLDER')
 
-        parser.add_argument("--projection_folder", type=str, default='data/Projection', help="projection folder")
+        parser.add_argument("--projection_folder", type=str, default='data/Projection', help="projection folder", metavar='FOLDER')
 
-        parser.add_argument("--facade_folder", type=str, default='data/Facades', help="facade folder")
+        parser.add_argument("--facade_folder", type=str, default='data/Facades', help="facade folder", metavar='FOLDER')
 
         parser.add_argument("--country", type=str, default=None,
                             help="country constrain")
@@ -34,22 +34,22 @@ class AssetBaseOptions():
                             help="city constrain")
 
         parser.add_argument("--min_height", type=int, default=None,
-                            help="minimal height")
+                            help="minimal height", metavar='PX')
 
         parser.add_argument("--min_width", type=int, default=None,
-                            help="minimal width")
+                            help="minimal width", metavar='PX')
 
         parser.add_argument("--max_height", type=int, default=None,
-                            help="maximal height")
+                            help="maximal height", metavar='PX')
 
         parser.add_argument("--max_width", type=int, default=None,
-                            help="maximal width")
+                            help="maximal width", metavar='PX')
 
         parser.add_argument("--max_occlusion", type=float, default=None,
-                            help="max occlusion")
+                            help="max occlusion", metavar='NUM')
 
 
-        parser.add_argument("--use_tqdm", type=bool, default=True, help="use tqdm")
+        parser.add_argument("--use_tqdm", type=bool, default=True, help="use tqdm", metavar='BOOL')
 
         self.initialized = True
         return parser
