@@ -24,6 +24,15 @@ The dataset (including JSON, CSV metadata, download script, and documents) is ma
 
 ## Overview
 ![Teaser](./teaser.pdf)
+<embed src="./teaser.pdf" width="697" height="131">
+
+<object data="./teaser.pdf" type="application/pdf" width="697px" height="131px">
+    <embed src="http://yoursite.com/the.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+
 This dataset contains 199,723 facade images and corresponding window, door, and balcony asset images together with descriptive attributes. You can also get the original panoramic images (b) and projected images (c) after running the download scripts.
 
 Geographic locations of the collected facades:
