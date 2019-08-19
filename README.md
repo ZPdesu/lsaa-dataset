@@ -170,7 +170,7 @@ Here is an example to download 300 facade images of Vienna with a minimum pixel 
 
 It is worth noting that three files need the same optional arguments. If you want to change the default values, please modify the *options/facade_base_options.py*.
 
-By default, we use the *annotations/Properties23K.csv* as facade_properties file, which means we only download the filtered 23K facade images other than the original 200K. Due to image quality issues, we removed facade images of Berlin, Brussels and HK in the *annotations/Properties23K.csv*, so please do not choose these values as the city option when you are using the annotations/Properties23K.csv.
+By default, we use the *annotations/Properties23K.csv* as facade_properties file, which means we only download the filtered 23K facade images other than the original 200K. Due to image quality issues, we removed facade images of Berlin, Brussels and HK in the *annotations/Properties23K.csv*, so please do not choose these values as the city option when you are using the *annotations/Properties23K.csv*.
 
 **Step4**: Detect architectural assets (windows, doors and balconies) from downloaded facade images.
 
@@ -215,6 +215,13 @@ Depending on the asset types selected, you can get different kind of architectur
 > python step4_detect_assets_from_facades.py --asset_type window
 ```
 There are also two versions of the assets properties file: *xx_all.csv* and *xx_filtered.csv*. By default we use *xx_filtered.csv*, so if you want to use *xx_all.csv*, please add `--filtered False` option. Both of assets in *xx_all.csv* and *xx_filtered.csv* are obtained from the facades in *Properties23K.csv*.
+
+Example to get all of the door images:
+
+```
+> python step4_detect_assets_from_facades.py --asset_type door --filtered False
+```
+<span style='color:red'> **Note:** </span>
 
 
 ## Metadata
