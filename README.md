@@ -301,3 +301,4 @@ If you use this code or data for your research, please cite our papers.
 ```
 
 ## Acknowledgements
+The self-contained streetview codes are modified from https://github.com/robolyst/streetview
