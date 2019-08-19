@@ -168,9 +168,9 @@ Here is an example to download 300 facade images of Vienna with a minimum pixel 
 > python step3_detect_facades_from_rendering.py --city Vienna --min_height 200 --min_width 200 --first 0 --last 300
 ```
 
-It is worth noting that three files need the same optional arguments. If you want to change the default values, please modify the *options/facade_base_options.py*.
+It is worth noting that three files need the same optional arguments. If you want to change the default values, please modify the `options/facade_base_options.py`.
 
-By default, we use the *annotations/Properties23K.csv* as facade_properties file, which means we only download the filtered 23K facade images other than the original 200K. Due to image quality issues, we removed facade images of Berlin, Brussels and HK in the *annotations/Properties23K.csv*, so please do not choose these values as the city option when you are using the *annotations/Properties23K.csv*.
+By default, we use the `annotations/Properties23K.csv` as facade_properties file, which means we only download the filtered 23K facade images other than the original 200K. Due to image quality issues, we removed facade images of Berlin, Brussels and HK in the `annotations/Properties23K.csv`, so please do not choose these values as the city option when you are using the `annotations/Properties23K.csv`.
 
 **Step4**: Detect architectural assets (windows, doors and balconies) from downloaded facade images.
 
@@ -214,7 +214,7 @@ Depending on the asset types selected, you can get different kind of architectur
 ```
 > python step4_detect_assets_from_facades.py --asset_type window
 ```
-There are also two versions of the assets properties file: *xx_all.csv* and *xx_filtered.csv*. By default we use *xx_filtered.csv*, so if you want to use *xx_all.csv*, please add `--filtered False` option. Both of assets in *xx_all.csv* and *xx_filtered.csv* are obtained from the facades in *Properties23K.csv*.
+There are also two versions of the assets properties file: `xx_all.csv` and `xx_filtered.csv`. By default we use `xx_filtered.csv`, so if you want to use `xx_all.csv`, please add `--filtered False` option. Both of assets in `xx_all.csv` and `xx_filtered.csv` are obtained from the facades in `Properties23K.csv`.
 
 Example to get all of the door images:
 
@@ -222,40 +222,75 @@ Example to get all of the door images:
 > python step4_detect_assets_from_facades.py --asset_type door --filtered False
 ```
 **Note**:
-Since Google deleted some of the panoramas recorded in our files, the final downloaded facades and other architectural aseets may be less than expected. Please check the download results in the *data* folder and logs in the *logs* folder.
+Since Google deleted some of the panoramas recorded in our files, the final downloaded facades and other architectural aseets may be less than expected. Please check the download results in the `data` folder and logs in the `logs` folder.
 
 When the program starts working, the terminal will print `start`, and print `finished` when it is done.
 
 
 
 ## Metadata
+### Facades
 
-
-|name   |panoID   |country   |city   |building   |Lon   |Lat   |height   |width   |resolution   |aspect_ratio   |noblur   |view_angle   |Homography_error   |floors   |num_windows|
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|USA_NewYork_way264624874_Fid5411_-C0oUsgY_kUIty96ZOtrWg.jpg   |-C0oUsgY_kUIty96ZOtrWg   |USA   |NewYork   |way264624874   |-74.00   |40.74   |843   |787   |663441   |1.07   |2989.11   |49.97   |0.01   |7   |50|
-
-
-|background   |deco   |window   |balcony   |shop   |sign   |tree   |obs   |total_occlusion|
-|---|---|---|---|---|---|---|---|---|
-|0.14   |0   |0.10   |0   |0   |0   |0.26   |0.01   |0.27   |
-
-
+The `Properties23K.csv` and `Properties200K.csv` contains the following properties information for each facade image: 
 
 |name   |panoID   |country   |city   |building   |Lon   |Lat   |height   |width   |resolution   |aspect_ratio   |noblur   |view_angle   |Homography_error   |floors   |num_windows|background   |deco   |window|balcony   |shop   |sign   |tree   |obs   |total_occlusion|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|USA_NewYork_way264624874_Fid5411_-C0oUsgY_kUIty96ZOtrWg.jpg   |-C0oUsgY_kUIty96ZOtrWg   |USA   |NewYork   |way264624874   |-74.00   |40.74   |843   |787   |663441   |1.07   |2989.11   |49.97   |0.01   |7|50|0.14   |0   |0.10   |0   |0   |0   |0.26   |0.01   |0.27   |
+|USA_NewYork_way264624874_Fid5411_-C0oUsgY_kUIty96ZOtrWg.jpg   | -C0oUsgY_kUIty96ZOtrWg   |USA   |NewYork   |way264624874   |-74.00   |40.74   |843   |787   |663441   |1.07   |2989.11   |49.97   |0.01   |7|50|0.14   |0   |0.10   |0   |0   |0   |0.26   |0.01   |0.27   |
+|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|
 
 
-
-
-background,deco,window,balcony,shop,sign,tree,obs,total_occlusion
-
-
-0.1363859031925974,0.0,0.09519459906758852,0.0004898702371424137,0.0,0.0023167093984242763,0.2557032200301157,0.008070046922032253,0.263773266952148
+The `facade_detection_result.json` contains the following bounding box information for each facade image: 
+```
+{
+	'USA_NewYork_way264624874_Fid5411_-C0oUsgY_kUIty96ZOtrWg.jpg':{
+        'complete_name': 'USA_NewYork_way264624874_wall_1_1_-C0oUsgY_kUIty96ZOtrWg_VP_0_1.jpg', 
+        'simplified_name': '-C0oUsgY_kUIty96ZOtrWg_VP_0_1.jpg', 
+        'panoID': '-C0oUsgY_kUIty96ZOtrWg', 
+        'box': [2351.682861328125, 1545.7784423828125, 787.02587890625, 842.2864990234375]
+        },
+	...
+}
 ```
 
+The `panorama_rectification.json` contains the following rectification information for each projected image: 
+```
+{
+	'USA_NewYork_way264624874_wall_1_1_-C0oUsgY_kUIty96ZOtrWg_VP_0_1.jpg':{
+    	'pano_img': 'way264624874_wall_1_1_-C0oUsgY_kUIty96ZOtrWg.jpg', 
+        'panoID': '-C0oUsgY_kUIty96ZOtrWg', 
+        'simplified_name': '-C0oUsgY_kUIty96ZOtrWg_VP_0_1.jpg', 
+        'country': 'USA', 
+        'city': 'NewYork', 
+        'pitch': 0.01951806432130453, 
+        'roll': -0.0023856889244242277, 
+        'heading': -4.70347914765424, 
+        'height': 6656, 
+        'width': 13312}
+	...
+}
+```
 
+### Assets
+
+The `xx/xx_filtered.csv` and `xx/xx_all.csv` (xx refers to a specific asset type e.g. window) contains the following properties information for each asset image: 
+
+|name   |panoID   |country   |city   |building   |height   |width   |resolution   |aspect_ratio   |noblur   |view_angle  |facade_name   |normalized_x   |normalized_y   |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|France_Paris_way49339544_Fid485_Wid294383_ZgdOAZkrWUQAYh7Lk5rmvA.jpg   |ZgdOAZkrWUQAYh7Lk5rmvA   |France   |Paris   |way49339544   |123   |54   |6642   |2.28   |891.91   |41.12   |France_Paris_way49339544_Fid485_ZgdOAZkrWUQAYh7Lk5rmvA.jpg   |0.23   |0.53   |
+|...|...|...|...|...|...|...|...|...|...|...|...|...|...|
+
+
+The `xx/xx_detection.json` contains the following bounding box information for each asset image: 
+```
+{
+	'France_Paris_way49339544_Fid485_Wid294383_ZgdOAZkrWUQAYh7Lk5rmvA.jpg':{
+    	'facade_name': 'France_Paris_way49339544_Fid485_ZgdOAZkrWUQAYh7Lk5rmvA.jpg', 
+        'panoID': 'ZgdOAZkrWUQAYh7Lk5rmvA', 
+        'box': [159.14720153808594, 436.5448303222656, 44.50091552734375, 102.63150024414062]
+        },
+	...
+}
+```
 
 ## Citation
 
