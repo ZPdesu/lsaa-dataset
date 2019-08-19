@@ -231,6 +231,31 @@ When the program starts working, the terminal will print `start`, and print `fin
 ## Metadata
 
 
+|name   |panoID   |country   |city   |building   |Lon   |Lat   |height   |width   |resolution   |aspect_ratio   |noblur   |view_angle   |Homography_error   |floors   |num_windows|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|USA_NewYork_way264624874_Fid5411_-C0oUsgY_kUIty96ZOtrWg.jpg   |-C0oUsgY_kUIty96ZOtrWg   |USA   |NewYork   |way264624874   |-74.00   |40.74   |843   |787   |663441   |1.07   |2989.11   |49.97   |0.01   |7   |50
+
+
+|background   |deco   |window   |balcony   |shop   |sign   |tree   |obs   |total_occlusion|
+|---|---|---|---|---|---|---|---|---|
+|0.14   |0   |0.10   |0   |0   |0   |0.26   |0.01   |0.27   |
+
+
+
+|name   |panoID   |country   |city   |building   |Lon   |Lat   |height   |width   |resolution   |aspect_ratio   |noblur   |view_angle   |Homography_error   |floors   |num_windows||background   |deco   |window   |balcony   |shop   |sign   |tree   |obs   |total_occlusion|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|USA_NewYork_way264624874_Fid5411_-C0oUsgY_kUIty96ZOtrWg.jpg   |-C0oUsgY_kUIty96ZOtrWg   |USA   |NewYork   |way264624874   |-74.00   |40.74   |843   |787   |663441   |1.07   |2989.11   |49.97   |0.01   |7   |50|0.14   |0   |0.10   |0   |0   |0   |0.26   |0.01   |0.27   |
+
+
+
+
+background,deco,window,balcony,shop,sign,tree,obs,total_occlusion
+
+
+0.1363859031925974,0.0,0.09519459906758852,0.0004898702371424137,0.0,0.0023167093984242763,0.2557032200301157,0.008070046922032253,0.263773266952148
+```
+
+
 
 ## Citation
 
