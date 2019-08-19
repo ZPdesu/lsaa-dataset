@@ -232,7 +232,7 @@ When the program starts working, the terminal will print `start`, and print `fin
 
 
 |name   |panoID   |country   |city   |building   |Lon   |Lat   |height   |width   |resolution   |aspect_ratio   |noblur   |view_angle   |Homography_error   |floors   |num_windows|
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |USA_NewYork_way264624874_Fid5411_-C0oUsgY_kUIty96ZOtrWg.jpg   |-C0oUsgY_kUIty96ZOtrWg   |USA   |NewYork   |way264624874   |-74.00   |40.74   |843   |787   |663441   |1.07   |2989.11   |49.97   |0.01   |7   |50|
 
 
@@ -243,7 +243,7 @@ When the program starts working, the terminal will print `start`, and print `fin
 
 
 |name   |panoID   |country   |city   |building   |Lon   |Lat   |height   |width   |resolution   |aspect_ratio   |noblur   |view_angle   |Homography_error   |floors   |num_windows|background   |deco   |window|balcony   |shop   |sign   |tree   |obs   |total_occlusion|
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |USA_NewYork_way264624874_Fid5411_-C0oUsgY_kUIty96ZOtrWg.jpg   |-C0oUsgY_kUIty96ZOtrWg   |USA   |NewYork   |way264624874   |-74.00   |40.74   |843   |787   |663441   |1.07   |2989.11   |49.97   |0.01   |7|50|0.14   |0   |0.10   |0   |0   |0   |0.26   |0.01   |0.27   |
 
 
