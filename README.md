@@ -37,7 +37,7 @@ The following is a list of the contents of the annotations folder:
 | Path | Size | Files | Format | Description
 | :--- | :--: | ----: | :----: | :----------
 | [annotations](https://drive.google.com/open?id=1hnMSMuA4fY28rqkI64asGmhUWKg_OMc5) | 860.2 MB | 13 | | Annotations folder
-| &boxvr;&nbsp; [Properties200K.csv](https://drive.google.com/open?id=1XR5CNsQGg9803yJ_YYtcchgZlXizv_gx) | 77.1 MB | 1 | CSV | Properties file of 200K facades 
+| &boxvr;&nbsp; [Properties200K.csv](https://drive.google.com/open?id=1XR5CNsQGg9803yJ_YYtcchgZlXizv_gx) | 77.1 MB | 1 | CSV | Properties file of 200K facades
 | &boxvr;&nbsp; [Properties23K.csv](https://drive.google.com/open?id=1ghPJjIHrao77-T8tvTlVn9cp9cKhZeLf) | 9.2 MB | 1 | CSV | Filtered version of Properties200K.csv (a subset of 23K facades)
 | &boxvr;&nbsp; [panorama_rectification.json](https://drive.google.com/open?id=12cOD19PeknR8uD7ePpJ74fOkVszQnj0G) | 138.6 MB | 1 | JSON | Rectification parameters of the panoramic images
 | &boxvr;&nbsp; [facade_detection_result.json](https://drive.google.com/open?id=195uDy_l3dWbX8kVepHkcnpfKbq4ChiGF) | 85.2 MB | 1 | JSON | Facade bounding boxes on projected images
@@ -61,12 +61,12 @@ Clone this repo.
 git clone git@github.com:ZPdesu/lsaa-dataset.git
 cd lsaa-dataset
 ```
-Please install dependencies by 
+Please install dependencies by
 
 ```
 pip install -r requirements.txt
 ```
-This code also requires the [google-panorama-by-id](https://www.npmjs.com/package/google-panorama-by-id) to check whether the panorama has been removed by Google. You can easily install it by 
+This code also requires the [google-panorama-by-id](https://www.npmjs.com/package/google-panorama-by-id) to check whether the panorama has been removed by Google. You can easily install it by
 
 ```
 npm install google-panorama-by-id
@@ -221,10 +221,16 @@ Example to get all of the door images:
 ```
 > python step4_detect_assets_from_facades.py --asset_type door --filtered False
 ```
-<font color='red'> **Note:** </font>
+**Note**:
+Since Google deleted some of the panoramas recorded in our files, the final downloaded facades and other architectural aseets may be less than expected. Please check the download results in the *data* folder and logs in the *logs* folder.
+
+When the program starts working, the terminal will print `start`, and print `finished` when it is done.
+
 
 
 ## Metadata
+
+
 
 ## Citation
 
@@ -235,5 +241,3 @@ If you use this code or data for your research, please cite our papers.
 ```
 
 ## Acknowledgements
-
-
