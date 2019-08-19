@@ -4,7 +4,7 @@
 ![Photospheres 78K](https://img.shields.io/badge/photospheres-78K-green.svg?style=plastic)
 ![Facades 200K](https://img.shields.io/badge/facades-200K-green.svg?style=plastic)
 
-![Dataset image](./facades_windows.png)
+![Dataset image](./docs/images/facades_windows.png)
 
 Large Scale Architectural Asset Dataset (LSAA) is  a dataset of architectural assets from a large-scale panoramic image collection:
 
@@ -23,12 +23,12 @@ The dataset (including JSON, CSV metadata, download script, and documents) is ma
 * [https://creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## Overview
-![Teaser](./teaser.png)
+![Teaser](./docs/images/teaser.png)
 
 This dataset contains 199,723 facade images and corresponding window, door, and balcony asset images together with descriptive attributes. You can also get the original panoramic images (b) and projected images (c) after running the download scripts.
 
 Geographic locations of the collected facades:
-![locations](./locations.png)
+![locations](./docs/images/locations.png)
 
 To get all of the data, you first need to download the annotations folder from [Google Drive](https://drive.google.com/open?id=1hnMSMuA4fY28rqkI64asGmhUWKg_OMc5) and place it under the main lsaa-dataset folder.
 
