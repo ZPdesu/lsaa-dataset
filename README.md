@@ -221,7 +221,7 @@ Example to get all of the door images:
 ```
 > python step4_detect_assets_from_facades.py --asset_type door --filtered False
 ```
-<span style='color:red'> **Note:** </span>
+<font color='red'> **Note:** </font>
 
 
 ## Metadata
