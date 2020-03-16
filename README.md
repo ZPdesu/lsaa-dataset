@@ -297,6 +297,14 @@ The `xx/xx_detection.json` contains the following bounding box information for e
 If you use this code or data for your research, please cite our papers.
 
 ```
+@MISC{10754/655517,
+	year = {2019},
+	doi = {10.25781/KAUST-806Z4},
+	author = {Zhu, Peihao},
+	note = {We present a system to extract architectural assets from large scale collections ofpanoramic imagery. First, we automatically rectify and crop parts of the panoramicimage that contain dominant planes. Second, we use object detection to extract assetssuch as facades and windows. Third, we use various tools to determine attributes ofthe assets to determine the asset quality and index the assets for search. Fourth, weprovide a user interface to visualize and query assets. Finally, we present applicationsto urban modeling and texture synthesis.},
+	title = {Large Scale Architectural Asset Extraction from Panoramic Imagery},
+	url = {http://hdl.handle.net/10754/655517}
+}
 
 ```
 
