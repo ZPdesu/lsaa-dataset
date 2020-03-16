@@ -305,7 +305,6 @@ If you use this code or data for your research, please cite our papers.
 	title = {Large Scale Architectural Asset Extraction from Panoramic Imagery},
 	url = {http://hdl.handle.net/10754/655517}
 }
-
 ```
 
 ## Acknowledgements
