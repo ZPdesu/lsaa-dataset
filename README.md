@@ -10,7 +10,7 @@ Large Scale Architectural Asset Dataset (LSAA) is  a dataset of architectural as
 
 > **Large Scale Architectural Asset Extraction from Panoramic Imagery**<br>
 > Peihao Zhu (KAUST), Wamiq Reyaz Para (KAUST), Anna Fruehstueck (KAUST), John Femiani (Miami University in Oxford Ohio), Peter Wonka (KAUST)<br>
-> https://arxiv.org/...
+> https://ieeexplore.ieee.org/document/9145640
 
 
 The dataset consists of 78,377 photospheres and 199,723 extracted facade images including the contained windows, doors, and balconies together with descriptive attributes.
@@ -21,6 +21,20 @@ For inquiries, please contact peihao.zhu@kaust.edu.sa
 The dataset (including JSON, CSV metadata, download script, and documents) is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). You can **use, redistribute, and adapt it for non-commercial purposes**, as long as you (a) give appropriate credit by **citing our paper**, (b) **indicate any changes** that you've made, and (c) distribute any derivative works **under the same license**.
 
 * [https://creativecommons.org/licenses/by-nc-sa/4.0/](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
+## <span style="color:red"> New Update</span>
+
+The architectural asset dataset can be directly downloaded [Here](https://drive.google.com/drive/folders/1iRZ9lw9vsiQbDGYMGK-II5g7yK_9Gw8d?usp=sharing), and the panorama rectification code has been added to the `Panorama_Rectification/` folder.
+
+To rectify the panorama images input by the user, put them in the `Panorama_Rectification/Pano_new/New/images` folder and run
+
+```
+cd Panorama_Rectification
+python Batch_Simon_Panoramas_final.py
+```
+
+
 
 ## Overview
 ![Teaser](./docs/images/teaser.png)
@@ -53,6 +67,9 @@ The following is a list of the contents of the annotations folder:
 | &ensp;&ensp; &boxvr;&nbsp; [balcony_all.csv](https://drive.google.com/open?id=1TqoKAbbriRoKrdm2I6ODk5MUfcmMtFw9)| 40.7MB | 1 | CSV | Properties file of balconies
 | &ensp;&ensp; &boxvr;&nbsp; [balcony_filtered.csv](https://drive.google.com/open?id=1aTpfpy7Nii3x8il4ieiBzZrI2fjgYkav)| 15.2MB | 1 | CSV | Filtered version of balcony_all.csv
 | &ensp;&ensp; &boxur;&nbsp; [balcony_detection.json](https://drive.google.com/open?id=1ymygF05ZbiJ4faMJQqDODZDefFVX-HjI) | 51.9 MB | 1 | JSON | Balcony bounding boxes on the 23K facades
+
+
+
 
 ## Installation
 Clone this repo.
