@@ -1,4 +1,4 @@
-## Large Scale Architectural Asset Dataset (LSAA)
+## Large Scale Architectural Asset Dataset -- LSAA (TVCG)
 ![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg?style=plastic)
 ![License CC](https://img.shields.io/badge/license-CC-green.svg?style=plastic)
 ![Photospheres 78K](https://img.shields.io/badge/photospheres-78K-green.svg?style=plastic)
@@ -10,8 +10,8 @@ Large Scale Architectural Asset Dataset (LSAA) is  a dataset of architectural as
 
 > **Large Scale Architectural Asset Extraction from Panoramic Imagery**<br>
 > Peihao Zhu (KAUST), Wamiq Reyaz Para (KAUST), Anna Fruehstueck (KAUST), John Femiani (Miami University in Oxford Ohio), Peter Wonka (KAUST)<br>
+> https://youtu.be/XmQvwaIbbKE
 > https://ieeexplore.ieee.org/document/9145640
-
 
 The dataset consists of 78,377 photospheres and 199,723 extracted facade images including the contained windows, doors, and balconies together with descriptive attributes.
 
