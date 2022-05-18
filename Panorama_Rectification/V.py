@@ -45,6 +45,7 @@ from z_predict import z_predict
 from hl_predict import hl_predict
 from hl_score import hl_score
 from hl_sample import hl_sample
+from default_params import params
 import os
 
 # plot options (0 if not plotted, figure number otherwise)
@@ -55,10 +56,30 @@ class plots:
     hl_modes = 0 #12
     hl_samples = 0 #12
 
-def V(im, width, height, focal, params, tmp_count):
+def V(im, width, height, focal, params=params):
+    """ Find the vanishing points in an image
 
-    # fix random seed
-    np.random.seed(1)
+    Args:
+      im (PIL.Image): An input image
+      width (int): Width of the image
+      height (int): Height of the image
+      focal (float): Focal length of the camera (e.g. 32mm )
+      params: various other settings with defaults in the default_params module.
+
+    Return:
+      hl:  Line segments [ (x1, y1), (x2,y1) (nan,nan), ....]
+      hvps: The horizonstal vanishing points [ (x1, y1), (x2, y2), ...]
+      hvp_groups:  hvp_groups[i] is the indices of the line segment pointed at hvps[i]
+      z: The zenith point (up)
+      z_group: The indices of the line segments pointed at z
+      ls: The line segments [ [x0, y0, x1, y1], ... ]
+
+    Optionally return (if params.return_z_homo is True)
+      z_homo: Zenith point in homogeneous coordinates 
+      hvp_homo: Horizontal vanishing points in homogeneous coordinats
+      ls_homo: Line segments in homogeneous coordinates
+    """
+
 
     # principal point is assumed at image center
     u0 = width / 2
@@ -68,13 +89,8 @@ def V(im, width, height, focal, params, tmp_count):
     # Reference https://github.com/primetang/pylsd
 
     gray = np.asarray(im.convert('L'))
-    lines = lsd(gray, tmp_count)
+    lines = lsd(gray)
     lsd_output = lines[:, :4]
-
-    # import scipy.io as sio
-    # mat_lsd = sio.loadmat('lsd.mat')
-    # lsd_output = mat_lsd['lsd']
-
 
     # plot the results
     if plots.lsd:
@@ -85,13 +101,11 @@ def V(im, width, height, focal, params, tmp_count):
             pt1 = (lsd_output[j, 0], lsd_output[j, 1])
             pt2 = (lsd_output[j, 2], lsd_output[j, 3])
             draw.line((pt1, pt2), fill=tuple((cmap[j]*255).astype(int)), width=2)
-        #im1.show()
         im1.save('tmp/tmp1.jpg')
 
     # LS filtering
-
     thres_aligned = max(width, height) / 128.
-    length_t = np.sqrt(width + height) / 1.71
+    length_t = np.sqrt(width + height) / 1.71 # sqrt(2)?
     ls = ls_filter(thres_aligned, length_t, lsd_output)
     ls_homo = normalize.normalize(ls, width, height, focal)
 

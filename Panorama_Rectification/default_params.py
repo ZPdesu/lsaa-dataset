@@ -12,6 +12,8 @@ class params:
     S = 300
     L_vp = 128
 
+
+
     # put the parameter below to 1 if you need to detect infinite horizontal VPs,
     # e.g.for ortho - rectification of fronto-parallel vertical planes
     include_infinite_hvps = 0
@@ -25,6 +27,9 @@ class params:
     theta_horline = 1
     hvp_refinement = True
     refine_niters = 3
+
+    # These are referenced V, idk why
+    return_z_homo = False
 
     def score_function(self, x):
         return (params.theta_con - x) * (params.theta_con > x)

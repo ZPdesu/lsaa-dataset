@@ -14,8 +14,9 @@ def hl_sample(zenith_homo, modes_homo, modes_offset, modes_left, modes_right, H,
     if np.isnan(tilt):
         tilt = 0
     nsamp = np.ceil(S / modes_homo.shape[1])
-    x = np.linspace(-2.0, 2.0, num=1e5)
+    x = np.linspace(-2.0, 2.0, num=int(1e5))
     uniformrnd = np.arange(1, 1e5 + 1)
+
     for i in range(modes_homo.shape[1]):
         for j in range(int(nsamp) - 1):
             if H[i] <= 0:

@@ -10,8 +10,6 @@ def hl_score(hl_samp, ls_homo, z_homo, params):
         helpfulIds = filter_verhor_lines(ls_homo, z_homo, params)
         initialIds = np.arange(len(helpfulIds))
         candidates[i]["horizon_homo"] = hl_samp[:, i]
-        # if i == 18:
-        #     print(0)
         [candidates[i]["sc"], candidates[i]["hvp_homo"], hvp_groups] = vp_predict(ls_homo[:, helpfulIds], initialIds, candidates[i]["horizon_homo"], params)
         candidates[i]["hvp_groups"] = [helpfulIds[hvp_groups[k]] for k in range(len(hvp_groups))]
         nhvps.append(candidates[i]["hvp_homo"].shape[0])

@@ -13,7 +13,8 @@ def vp_score(vp_homo, lines_homo, score_function):
     for i in range(score_mat.shape[0]):
         horgroup.append(np.where(score_mat[i])[0])
         score.append(np.sum(score_mat[i]))
-    horgroup = np.array(horgroup)
+
+    #horgroup = np.array(horgroup, dtype=object)  # horgroup is a jagged array
     score = np.array(score)
     return score, horgroup
 
@@ -44,19 +45,19 @@ def vp_predict(lines_homo, initialIds, horizon_homo, params):
         p = np.arccos(rho / rho2) / np.pi
     else:
         p = np.zeros(rho2.shape)
-        d = np.sqrt(np.abs(rho2 * rho2 - np.power(rho, 2)))
-        I = np.where(rho2 <= 1)[0]
+        d = np.sqrt(np.abs(rho2**2 - rho**2))
+        I, = np.where(rho2 <= 1)
         if len(I) != 0:
             p[I] = d[I] / np.pi
-        I = np.where(rho2 > 1)[0]
+        I, = np.where(rho2 > 1)
         if len(I) != 0:
-            d2 = np.sqrt(rho2 * rho2 - 1)
+            d2 = np.sqrt(rho2[I] * rho2[I] - 1)
             beta = np.arctan(d2)
-            p[I] = (beta[I] + d[I] - d2[I]) / np.pi
+            p[I] = (beta + d[I] - d2) / np.pi
 
     tmp = inter_pts - np.array([A]).T.dot(np.ones([1, inter_pts.shape[1]]))
     dt = np.array([b, -a]).dot(tmp)
-    I = np.where(dt < 0)[0]
+    I, = np.where(dt < 0)
     p[I] = -p[I]
     [N, edges] = np.histogram(p, params.L_vp)
 
@@ -116,7 +117,7 @@ def vp_predict(lines_homo, initialIds, horizon_homo, params):
         scores.sort()
         scores = scores[::-1]
         horvps_homo = np.array(horvps_homo)[sortIds]
-        horgroups = horgroups[sortIds]
+        horgroups = [horgroups[i] for i in sortIds]
         nvps = np.min([len(horgroups), 2])
         sc = np.sum(scores[:nvps])
 
